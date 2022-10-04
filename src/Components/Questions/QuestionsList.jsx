@@ -19,6 +19,7 @@ const QuestionsList = ({ questions, answers, setAnswers, setResults }) => {
 
       setResults({ scores, mistakes });
       navigate('/home/results', { replace: true, relative: true });
+      setAnswers([])
     }
   };
 

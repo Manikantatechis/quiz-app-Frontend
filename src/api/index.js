@@ -1,2 +1,2 @@
 export const mockData = {};
-export const baseUrl = 'http://localhost:8000/';
+export const baseUrl = 'https://quiz-app-backend.manikantakc.repl.co/';
