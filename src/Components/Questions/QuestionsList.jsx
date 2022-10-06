@@ -10,16 +10,16 @@ const QuestionsList = ({ questions, answers, setAnswers, setResults }) => {
   }
 
   const handleSaveResult = () => {
-    console.log(questions.length, answers.length)
+    console.log(questions.length, answers.length);
     if (questions.length !== answers.length)
       alert('Please answer all questions');
     else {
       const scores = answers.filter((answer) => answer.answer.is_right).length;
-      const mistakes = answers.filter((answer) => !answer.answer.is_right);
+      //const mistakes = answers.filter((answer) => !answer.answer.is_right);
 
-      setResults({ scores, mistakes });
+      setResults({ scores, answers });
       navigate('/home/results', { replace: true, relative: true });
-      setAnswers([])
+      setAnswers([]);
     }
   };
 

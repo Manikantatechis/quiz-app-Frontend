@@ -10,9 +10,12 @@ export const Question = ({ question, index, setAnswers, answers }) => {
     setSelected(val);
     setAnswers((prev) => {
       let isAnsweredQuestion = prev.some((p) => p.title === title);
-      if (!isAnsweredQuestion) return [...prev, { title, answer: val }];
+      if (!isAnsweredQuestion)
+        return [...prev, { title, answer: val, options }];
       else {
-        return prev.map((p) => (p.title === title ? { ...p, answer: val } : p));
+        return prev.map((p) =>
+          p.title === title ? { ...p, answer: val, options } : p
+        );
       }
     });
   };
