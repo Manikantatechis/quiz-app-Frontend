@@ -34,7 +34,7 @@ const Results = ({ results, quiz }) => {
           <div className='p-10 flex flex-col space-y-5 bg-white rounded drop-shadow-lg min-w-[650px]'>
             <h1 className='mb-6 text-4xl text-center font-semibold text-[#00abae] underline'>
               Correct Answers : {results.scores} out of{' '}
-              {results.scores + results.answers.length}
+              {results.answers.length}
             </h1>
             <div>
               <div className='flex flex-col space-y-5'>

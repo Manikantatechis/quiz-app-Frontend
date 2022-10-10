@@ -22,6 +22,9 @@ const Signup = () => {
       }
     } catch (error) {
       console.log(error.response.data);
+      if (error.response.data.error == 'Email already exists') {
+        alert(error.response.data.error + ' please signIn')
+      }
     }
   };
 
