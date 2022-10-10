@@ -4,8 +4,9 @@ import { baseUrl } from '../api/';
 import { Mistakes } from './Mistakes';
 
 const Results = ({ results, quiz }) => {
+  console.log({ results });
   const user = JSON.parse(localStorage.getItem('user')) ?? { user: '' };
-  const navigate = useNavigate()
+  const navigate = useNavigate();
 
   const submitScore = (score) => {
     console.log(score);
@@ -23,7 +24,7 @@ const Results = ({ results, quiz }) => {
         },
       }
     );
-    navigate('/home')
+    navigate('/home');
   };
 
   return (
@@ -31,21 +32,19 @@ const Results = ({ results, quiz }) => {
       <div className='w-full flex justify-center items-center mt-10'>
         <div>
           <div className='p-10 flex flex-col space-y-5 bg-white rounded drop-shadow-lg min-w-[650px]'>
-            <h1 className='text-4xl text-center font-semibold text-[#00abae] underline'>
+            <h1 className='mb-6 text-4xl text-center font-semibold text-[#00abae] underline'>
               Correct Answers : {results.scores} out of{' '}
-              {results.scores + results.mistakes.length}
+              {results.scores + results.answers.length}
             </h1>
             <div>
-              <h1 className='text-2xl font-semibold text-red-400 mb-5'>
-                Wrong Answer/s :
-              </h1>
               <div className='flex flex-col space-y-5'>
-                {results.mistakes.map((mistake, index) => (
+                {results.answers.map((answer, index) => (
                   <Mistakes
                     key={index}
                     index={index}
-                    answer={mistake.answer}
-                    title={mistake.title}
+                    answer={answer.answer}
+                    options={answer.options}
+                    title={answer.title}
                   />
                 ))}
               </div>
