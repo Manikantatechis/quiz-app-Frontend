@@ -4,6 +4,7 @@ import { Route, Routes } from 'react-router-dom';
 import { baseUrl } from './api';
 import { Categories, QuestionsList, Results } from './Components';
 import PageNotFound from './Components/PageNotFound';
+import ForgotPassoword from './pages/ForgotPassword';
 import Home from './pages/Home';
 import Signin from './pages/Signin/Signin';
 import Signup from './pages/Signup/Signup';
@@ -66,6 +67,7 @@ function App() {
       </Route>
       <Route path='/' element={<Signin />} />
       <Route path='/signup' element={<Signup />} />
+      <Route path='/forgotpassword' element={<ForgotPassoword />} />
       <Route path='*' element={<PageNotFound />} />
 
       <Route />
