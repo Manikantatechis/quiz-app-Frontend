@@ -111,12 +111,22 @@ const Signin = () => {
               </div>
               <div className='relative flex justify-center text-sm'>
                 <span className='px-2 bg-white text-gray-500'>
-                  No Account Yet? Please click below
+                  Forgot Password?
+                  <Link to='/forgotpassword'>
+                    <span className='pl-1 underline cursor-pointer text-[#00abae]'>
+                      Click here
+                    </span>
+                  </Link>
                 </span>
               </div>
             </div>
 
             <div className='mt-6'>
+              <div className='text-sm'>
+                <span className='px-2 bg-white text-gray-500'>
+                  No Account Yet? Please click below.
+                </span>
+              </div>
               <Link to='/signup'>
                 <button
                   type='submit'
